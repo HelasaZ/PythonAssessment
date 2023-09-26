@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guest Data</title>
+</head>
+<body>
+
+<h2>Guest Data</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Guest Name</th>
+            <th>Status</th>
+            <th>Flat Booked</th>
+            <th>Checkin Date</th>
+            <th>Checkout Date</th>
+            <th>Creation Log</th>
+            <th>Booking Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for guest in guests %}
+            <tr>
+                <td>{{ guest.guest_name }}</td>
+                <td>{{ guest.status }}</td>
+                <td>{{ guest.flat_booked }}</td>
+                <td>{{ guest.checkin_date }}</td>
+                <td>{{ guest.checkout_date }}</td>
+                <td>{{ guest.creation_log }}</td>
+                <td>{{ guest.booking_value }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

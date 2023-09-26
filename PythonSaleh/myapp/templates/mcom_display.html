@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Mcom Data</title>
+</head>
+<body>
+<h1>Bonjour {{ user.username }} ! </h1>
+<h2>Mcom Data</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Guest Name</th>
+            <th>Status</th>
+            <th>Flat Booked</th>
+            <th>Checkin Date</th>
+            <th>Checkout Date</th>
+            <th>Creation Log</th>
+            {% if is_superuser %}
+            <th>Booking Value</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for guest in guests %}
+        <tr>
+            <td>{{ guest.guest_name }}</td>
+            <td>{{ guest.status }}</td>
+            <td>{{ guest.flat_booked }}</td>
+            <td>{{ guest.checkin_date }}</td>
+            <td>{{ guest.checkout_date }}</td>
+            <td>{{ guest.creation_log }}</td>
+            {% if is_superuser %}
+            <td>{{ guest.booking_value }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+</body>
+</html>
